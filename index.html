@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Divines Health — A/B Prototype</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Manrope', sans-serif; background:#fdfbf7; }
+  h1,h2,.serif { font-family: 'Cormorant Garamond', serif; }
+</style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+  <div class="max-w-md w-full text-center">
+    <div class="mx-auto mb-6 w-14 h-14 rounded-full bg-[#8d6f4c] flex items-center justify-center text-2xl">🌿</div>
+    <p class="text-[11px] tracking-[2px] uppercase text-[#a88f6d] font-bold mb-2">The Divines Health</p>
+    <h1 class="serif text-4xl font-semibold text-[#3c2a1e] mb-3">A/B Prototype Preview</h1>
+    <p class="text-[#706661] text-sm leading-relaxed mb-10">
+      Two landing page approaches for the Divines Wellness Program. Pick a version below to view it as a visitor would.
+    </p>
+
+    <div class="grid gap-4">
+      <a href="/a/" class="group block rounded-2xl border border-[#e8dfd3] bg-white p-6 text-left shadow-sm hover:shadow-md hover:border-[#c99443] transition-all">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-[#c99443]">Version A</span>
+          <span class="text-[#c99443] group-hover:translate-x-1 transition-transform">→</span>
+        </div>
+        <p class="serif text-xl font-semibold text-[#2b2421]">Video-Led, Clear Path</p>
+        <p class="text-xs text-[#706661] mt-1">Full program detail leads. Structured, linear walkthrough of the 12-week journey, founders, and testimonials.</p>
+      </a>
+
+      <a href="/b/" class="group block rounded-2xl border border-[#e8dfd3] bg-white p-6 text-left shadow-sm hover:shadow-md hover:border-[#8d6f4c] transition-all">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-[#8d6f4c]">Version B</span>
+          <span class="text-[#8d6f4c] group-hover:translate-x-1 transition-transform">→</span>
+        </div>
+        <p class="serif text-xl font-semibold text-[#2b2421]">Inspiring Journey</p>
+        <p class="text-xs text-[#706661] mt-1">Video hero + tap-to-recognize symptom grid. Shorter, emotional, interactive first — program phases come after.</p>
+      </a>
+    </div>
+
+    <p class="text-[11px] text-[#a9a190] mt-10">Best viewed on a mobile-width screen (both designs are mobile-first).</p>
+  </div>
+</body>
+</html>
