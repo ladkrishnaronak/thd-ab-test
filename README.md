@@ -2,8 +2,8 @@
 
 Static site, no build step. Pulled directly from the two Figma prototypes:
 
-- **Version A** — `/a` — "Video-Led, Clear Path": full program detail leads, structured linear walkthrough (hero → metadata → symptoms → video → program phases → founders → testimonials → enroll → contact).
-- **Version B** — `/b` — "Inspiring Journey": video hero + tap-to-recognize symptom grid, shorter and more interactive, program phases shown as a 4-card journey.
+- **Version A** — `/a` — "Video-Led, Clear Path": video hero + tap-to-recognize symptom grid, shorter and more interactive, program phases shown as a 4-card journey.
+- **Version B** — `/b` — "Inspiring Journey": full program detail leads, structured linear walkthrough (hero → metadata → symptoms → video → program phases → founders → testimonials → enroll → contact).
 - **Home** — `/` — links to both versions.
 
 ## Run locally
