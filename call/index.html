@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Book a 1:1 Call — Divines Wellness Program</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body { font-family:'Manrope',sans-serif; background:#fafaf7; }
+  .cormorant { font-family:'Cormorant Garamond',serif; }
+  .frame { max-width:420px; }
+  input { font-size:16px; }
+  .fld { width:100%; border:1.5px solid #ede0bd; border-radius:12px; padding:12px 14px; background:#fff; outline:none; }
+  .fld:focus { border-color:#8d6f4c; }
+  .slot.on { background:#8d6f4c; color:#fff; border-color:#8d6f4c; }
+  @keyframes pop { 0%{transform:scale(.6);opacity:0} 60%{transform:scale(1.08)} 100%{transform:scale(1);opacity:1} }
+  .pop { animation: pop .5s cubic-bezier(.2,.8,.3,1) both; }
+</style>
+</head>
+<body class="text-[#4a3f35]">
+<div class="frame mx-auto bg-white min-h-screen pb-12">
+
+  <header class="flex items-center justify-between px-4 py-3 sticky top-0 bg-white/95 backdrop-blur z-20 border-b border-[#f0ebe1]">
+    <a href="/" class="text-[13px] text-[#8d6f4c] font-semibold">← Back</a>
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-full bg-[#8d6f4c] flex items-center justify-center text-white text-xs">🌿</div>
+      <p class="font-bold text-[9px] tracking-[1px]">DIVINES WELLNESS PROGRAM</p>
+    </div>
+    <span class="w-10"></span>
+  </header>
+
+  <!-- ============ BOOKING STATE ============ -->
+  <div id="bookState">
+    <section class="px-6 pt-7 text-center">
+      <p class="text-[10px] tracking-[2px] uppercase text-[#a9a190] font-bold">Free · 20 minutes · No obligation</p>
+      <p class="cormorant font-bold text-[28px] leading-tight mt-2">Talk to us first</p>
+      <p class="text-[12px] text-[#a9a190] mt-2.5 leading-relaxed">
+        Speak directly with Dr. Neha or Priyanka. Ask anything — fees, schedule, or whether this program is right for you.
+      </p>
+    </section>
+
+    <!-- who you'll speak to: trust before commitment -->
+    <section class="px-6 pt-6">
+      <div class="flex gap-3">
+        <div class="flex-1 rounded-2xl bg-[#f7f0e2] border border-[#ede0bd] p-3.5 text-center">
+          <div class="w-12 h-12 rounded-full bg-[#e5dcc9] mx-auto flex items-center justify-center text-xl">👩‍⚕️</div>
+          <p class="cormorant font-bold text-[15px] mt-2 leading-tight">Dr. Neha Solanki</p>
+          <p class="text-[9px] text-[#a9a190] mt-0.5">Founder &amp; Director</p>
+        </div>
+        <div class="flex-1 rounded-2xl bg-[#f7f0e2] border border-[#ede0bd] p-3.5 text-center">
+          <div class="w-12 h-12 rounded-full bg-[#e5dcc9] mx-auto flex items-center justify-center text-xl">🧘‍♀️</div>
+          <p class="cormorant font-bold text-[15px] mt-2 leading-tight">Priyanka Patel</p>
+          <p class="text-[9px] text-[#a9a190] mt-0.5">Co-Founder</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Placeholder scheduler. Swap this block for the Calendly embed once the account exists. -->
+    <section class="px-6 pt-8">
+      <p class="lbl text-[12px] font-bold mb-3">Pick a time that suits you</p>
+      <div class="grid grid-cols-2 gap-2.5" id="slots">
+        <button class="slot border-[1.5px] border-[#ede0bd] rounded-xl py-3 text-[12px] font-semibold bg-white transition-colors" data-t="Tomorrow · 10:00 AM">Tomorrow<br/><span class="font-bold">10:00 AM</span></button>
+        <button class="slot border-[1.5px] border-[#ede0bd] rounded-xl py-3 text-[12px] font-semibold bg-white transition-colors" data-t="Tomorrow · 5:00 PM">Tomorrow<br/><span class="font-bold">5:00 PM</span></button>
+        <button class="slot border-[1.5px] border-[#ede0bd] rounded-xl py-3 text-[12px] font-semibold bg-white transition-colors" data-t="Saturday · 11:00 AM">Saturday<br/><span class="font-bold">11:00 AM</span></button>
+        <button class="slot border-[1.5px] border-[#ede0bd] rounded-xl py-3 text-[12px] font-semibold bg-white transition-colors" data-t="Saturday · 6:30 PM">Saturday<br/><span class="font-bold">6:30 PM</span></button>
+      </div>
+      <p class="text-[10px] text-[#a9a190] mt-3">Times shown in IST. Calls happen on WhatsApp or phone — your choice.</p>
+    </section>
+
+    <form id="callForm" class="px-6 pt-6 flex flex-col gap-4">
+      <div>
+        <label class="text-[12px] font-bold mb-1.5 block" for="cname">Your name <span class="text-[#c1553f]">*</span></label>
+        <input class="fld" id="cname" type="text" autocomplete="name" placeholder="Your name" />
+      </div>
+      <div>
+        <label class="text-[12px] font-bold mb-1.5 block" for="cphone">Mobile / WhatsApp <span class="text-[#c1553f]">*</span></label>
+        <input class="fld" id="cphone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit number" />
+      </div>
+
+      <p id="cErr" class="hidden text-[12px] text-[#c1553f] font-semibold"></p>
+
+      <button type="submit" class="w-full bg-[#8d6f4c] text-white font-bold rounded-full py-4 text-[15px]">Confirm My Call</button>
+      <p class="text-[10px] text-[#a9a190] text-center leading-relaxed">
+        No payment, no commitment.<br/>
+        Or message us directly on <a href="https://wa.me/917016100775" target="_blank" rel="noopener" class="text-[#8d6f4c] font-bold underline">WhatsApp</a>
+      </p>
+    </form>
+  </div>
+
+  <!-- ============ CONFIRMED STATE ============ -->
+  <div id="cDone" class="hidden px-6 pt-12 pb-6 text-center">
+    <div class="pop mx-auto w-24 h-24 rounded-full bg-[#f7f0e2] border-2 border-[#c99f6c] flex items-center justify-center text-5xl">📞</div>
+    <p class="cormorant font-bold text-[28px] leading-tight mt-6">Your call is booked</p>
+    <p class="cormorant italic text-[17px] text-[#a9a190] mt-1.5">We're looking forward to it.</p>
+
+    <div class="bg-[#f7f4ee] rounded-2xl px-5 py-5 mt-7 text-left">
+      <p class="text-[10px] font-bold uppercase tracking-wide text-[#8d6f4c] mb-2">Your appointment</p>
+      <p id="cSlot" class="cormorant font-bold text-[22px]"></p>
+      <p class="text-[11px] text-[#a9a190] mt-1.5">We'll call <span id="cNum" class="font-bold text-[#4a3f35]"></span> — please keep your phone nearby.</p>
+    </div>
+
+    <div class="mt-5 rounded-2xl border border-[#ede0bd] px-5 py-4 text-left">
+      <p class="text-[12px] leading-relaxed text-[#a9a190]">
+        <span class="font-bold text-[#4a3f35]">Need to change the time?</span> Just message us on WhatsApp — a real person replies, usually within the hour.
+      </p>
+    </div>
+
+    <a href="https://wa.me/917016100775" target="_blank" rel="noopener" class="block w-full bg-[#8d6f4c] text-white font-bold rounded-full py-4 mt-6">💬 Message us on WhatsApp</a>
+    <a href="/" class="inline-block text-[12px] text-[#8d6f4c] underline underline-offset-4 mt-6">← Back to program page</a>
+  </div>
+
+</div>
+
+<script>
+  var chosen = null;
+  document.querySelectorAll('#slots .slot').forEach(function (b) {
+    b.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelectorAll('#slots .slot').forEach(function (x) { x.classList.remove('on'); });
+      b.classList.add('on');
+      chosen = b.dataset.t;
+    });
+  });
+
+  document.getElementById('callForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var err = document.getElementById('cErr');
+    err.classList.add('hidden');
+
+    var n = document.getElementById('cname').value.trim();
+    var p = document.getElementById('cphone').value.replace(/\D/g, '');
+
+    if (!chosen) { err.textContent = 'Please pick a time slot above.'; err.classList.remove('hidden'); return; }
+    if (!n)      { err.textContent = 'Please tell us your name.';      err.classList.remove('hidden'); return; }
+    if (p.length < 10) { err.textContent = 'Please enter a valid 10-digit number.'; err.classList.remove('hidden'); return; }
+
+    console.log('[prototype] call booking', { name: n, phone: p, slot: chosen });
+
+    document.getElementById('cSlot').textContent = chosen;
+    document.getElementById('cNum').textContent  = '+91 ' + p;
+    document.getElementById('bookState').classList.add('hidden');
+    document.getElementById('cDone').classList.remove('hidden');
+    window.scrollTo({ top: 0 });
+  });
+</script>
+</body>
+</html>

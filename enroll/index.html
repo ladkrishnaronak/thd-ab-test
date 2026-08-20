@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Enroll — Divines Wellness Program</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body { font-family:'Manrope',sans-serif; background:#fafaf7; }
+  .cormorant { font-family:'Cormorant Garamond',serif; }
+  .frame { max-width:420px; }
+  input,select,textarea { font-size:16px; } /* prevents iOS zoom-on-focus */
+  .fld { width:100%; border:1.5px solid #ede0bd; border-radius:12px; padding:12px 14px; background:#fff; outline:none; }
+  .fld:focus { border-color:#8d6f4c; }
+  .lbl { font-size:12px; font-weight:700; margin-bottom:6px; display:block; }
+  .err { border-color:#c1553f !important; }
+  @keyframes pop { 0%{transform:scale(.6);opacity:0} 60%{transform:scale(1.08)} 100%{transform:scale(1);opacity:1} }
+  .pop { animation: pop .5s cubic-bezier(.2,.8,.3,1) both; }
+  @keyframes rise { from{transform:translateY(14px);opacity:0} to{transform:translateY(0);opacity:1} }
+  .rise { animation: rise .5s ease both; }
+</style>
+</head>
+<body class="text-[#4a3f35]">
+<div class="frame mx-auto bg-white min-h-screen pb-12">
+
+  <header class="flex items-center justify-between px-4 py-3 sticky top-0 bg-white/95 backdrop-blur z-20 border-b border-[#f0ebe1]">
+    <a href="/" class="text-[13px] text-[#8d6f4c] font-semibold">← Back</a>
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-full bg-[#8d6f4c] flex items-center justify-center text-white text-xs">🌿</div>
+      <p class="font-bold text-[9px] tracking-[1px]">DIVINES WELLNESS PROGRAM</p>
+    </div>
+    <span class="w-10"></span>
+  </header>
+
+  <!-- ================= FORM STATE ================= -->
+  <div id="formState">
+    <section class="px-6 pt-7 pb-5 text-center">
+      <p class="text-[10px] tracking-[2px] uppercase text-[#a9a190] font-bold">Step 1 of 1</p>
+      <p class="cormorant font-bold text-[28px] leading-tight mt-2">Begin your journey</p>
+      <p class="text-[12px] text-[#a9a190] mt-2.5 leading-relaxed">
+        Just a few details so we can guide you properly.<br/>
+        <span class="font-bold text-[#8d6f4c]">No payment here</span> — we'll call you first.
+      </p>
+    </section>
+
+    <div id="symEcho" class="mx-6 mb-5 hidden rounded-2xl bg-[#f7f0e2] border border-[#ede0bd] px-4 py-3.5">
+      <p class="text-[10px] font-bold uppercase tracking-wide text-[#8d6f4c]">What you told us</p>
+      <p id="symEchoText" class="text-[12px] mt-1.5 leading-relaxed"></p>
+    </div>
+
+    <form id="enrollForm" class="px-6 flex flex-col gap-4" novalidate>
+      <div>
+        <label class="lbl" for="fullName">Full name <span class="text-[#c1553f]">*</span></label>
+        <input class="fld" id="fullName" name="fullName" type="text" autocomplete="name" placeholder="Your name" />
+      </div>
+      <div>
+        <label class="lbl" for="phone">Mobile / WhatsApp number <span class="text-[#c1553f]">*</span></label>
+        <input class="fld" id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit number" />
+        <p class="text-[10px] text-[#a9a190] mt-1.5">We'll send your confirmation on WhatsApp.</p>
+      </div>
+      <div>
+        <label class="lbl" for="email">Email <span class="text-[#c1553f]">*</span></label>
+        <input class="fld" id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" />
+      </div>
+      <div>
+        <label class="lbl" for="age">Age</label>
+        <input class="fld" id="age" name="age" type="number" min="18" max="100" inputmode="numeric" placeholder="Optional" />
+      </div>
+      <div>
+        <label class="lbl" for="program">Which program interests you?</label>
+        <select class="fld" id="program" name="program">
+          <option value="Thyroid Healing Pathways">Thyroid Healing Pathways (12 weeks)</option>
+          <option value="General Wellness">General Wellness Program</option>
+          <option value="Yoga Therapy">Yoga Therapy</option>
+          <option value="Not sure yet">Not sure yet — please guide me</option>
+        </select>
+      </div>
+      <div>
+        <label class="lbl" for="goal">What are you hoping to change?</label>
+        <textarea class="fld" id="goal" name="goal" rows="3" placeholder="Optional — tell us in your own words"></textarea>
+      </div>
+
+      <label class="flex items-start gap-2.5 mt-1 cursor-pointer">
+        <input type="checkbox" id="consent" class="mt-0.5 w-4 h-4 accent-[#8d6f4c] shrink-0" />
+        <span class="text-[11px] text-[#a9a190] leading-relaxed">
+          I declare I am fit to attend as per my physical and mental status, and I agree to be contacted about this program. <span class="text-[#c1553f]">*</span>
+        </span>
+      </label>
+
+      <p id="formErr" class="hidden text-[12px] text-[#c1553f] font-semibold"></p>
+
+      <button type="submit" class="w-full bg-[#8d6f4c] text-white font-bold rounded-full py-4 mt-1 text-[15px]">
+        Complete Enrollment →
+      </button>
+
+      <p class="text-[10px] text-[#a9a190] text-center leading-relaxed mb-4">
+        🔒 Your details stay private and are never shared.<br/>
+        Prefer to talk first? <a href="/call/" class="text-[#8d6f4c] font-bold underline">Book a free 1:1 call</a>
+      </p>
+    </form>
+  </div>
+
+  <!-- ================= CONFIRMATION STATE (Peak-End) ================= -->
+  <div id="doneState" class="hidden px-6 pt-10 pb-6 text-center">
+    <div class="pop mx-auto w-24 h-24 rounded-full bg-[#f7f0e2] border-2 border-[#c99f6c] flex items-center justify-center text-5xl">🌿</div>
+
+    <p class="rise cormorant font-bold text-[30px] leading-tight mt-6" style="animation-delay:.15s">
+      Welcome, <span id="doneName" class="text-[#8d6f4c]"></span>.
+    </p>
+    <p class="rise cormorant italic text-[18px] text-[#a9a190] mt-1.5" style="animation-delay:.25s">
+      Your journey has begun.
+    </p>
+
+    <div class="rise bg-[#f7f4ee] rounded-2xl px-5 py-5 mt-7 text-left" style="animation-delay:.35s">
+      <p class="text-[10px] font-bold uppercase tracking-wide text-[#8d6f4c] mb-3.5">What happens next</p>
+      <div class="flex gap-3 mb-4">
+        <span class="w-6 h-6 rounded-full bg-[#8d6f4c] text-white text-[11px] font-bold flex items-center justify-center shrink-0">1</span>
+        <div><p class="font-bold text-[13px]">A real person calls you</p><p class="text-[11px] text-[#a9a190] mt-0.5">Dr. Neha or Priyanka — within 24 hours, on the number you gave us.</p></div>
+      </div>
+      <div class="flex gap-3 mb-4">
+        <span class="w-6 h-6 rounded-full bg-[#8d6f4c] text-white text-[11px] font-bold flex items-center justify-center shrink-0">2</span>
+        <div><p class="font-bold text-[13px]">We answer everything</p><p class="text-[11px] text-[#a9a190] mt-0.5">Fees, schedule, and whether this program actually suits you. No pressure.</p></div>
+      </div>
+      <div class="flex gap-3">
+        <span class="w-6 h-6 rounded-full bg-[#8d6f4c] text-white text-[11px] font-bold flex items-center justify-center shrink-0">3</span>
+        <div><p class="font-bold text-[13px]">You decide — only then</p><p class="text-[11px] text-[#a9a190] mt-0.5">Payment comes after the call, never before. You are not committed yet.</p></div>
+      </div>
+    </div>
+
+    <!-- Trust reassurance: directly answers the "It can be fake" hesitation from research -->
+    <div class="rise mt-5 rounded-2xl border border-[#ede0bd] px-5 py-4 text-left" style="animation-delay:.45s">
+      <p class="text-[12px] leading-relaxed text-[#a9a190]">
+        <span class="font-bold text-[#4a3f35]">Want to confirm we're real?</span> Message us on WhatsApp right now — you'll get a reply from the same team you'll be working with. Our centre is at Vesu, Surat, and you're welcome to visit.
+      </p>
+    </div>
+
+    <a id="waLink" href="https://wa.me/917016100775" target="_blank" rel="noopener"
+       class="rise block w-full bg-[#8d6f4c] text-white font-bold rounded-full py-4 mt-6" style="animation-delay:.55s">
+      💬 Message us on WhatsApp
+    </a>
+    <a href="/call/" class="rise block w-full border-[1.5px] border-[#8d6f4c] text-[#8d6f4c] font-bold rounded-full py-3.5 mt-3 bg-white" style="animation-delay:.6s">
+      Book your 1:1 call now
+    </a>
+
+    <p class="rise text-[11px] text-[#a9a190] mt-6" style="animation-delay:.7s">
+      A confirmation is on its way to <span id="doneEmail" class="font-bold text-[#4a3f35]"></span>
+    </p>
+    <a href="/" class="rise inline-block text-[12px] text-[#8d6f4c] underline underline-offset-4 mt-5" style="animation-delay:.75s">← Back to program page</a>
+  </div>
+
+</div>
+
+<script>
+  // Carry symptom selections over from the Explore screen
+  var picked = [];
+  try { picked = JSON.parse(sessionStorage.getItem('tdh_symptoms') || '[]'); } catch (e) {}
+  if (picked.length) {
+    document.getElementById('symEcho').classList.remove('hidden');
+    document.getElementById('symEchoText').textContent =
+      'You told us about: ' + picked.join(', ') + '. We’ll bring this up on your call.';
+  }
+
+  var form = document.getElementById('enrollForm');
+  var errBox = document.getElementById('formErr');
+
+  function fail(msg, ids) {
+    errBox.textContent = msg;
+    errBox.classList.remove('hidden');
+    (ids || []).forEach(function (id) { document.getElementById(id).classList.add('err'); });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return false;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    errBox.classList.add('hidden');
+    ['fullName','phone','email'].forEach(function (id) { document.getElementById(id).classList.remove('err'); });
+
+    var name  = document.getElementById('fullName').value.trim();
+    var phone = document.getElementById('phone').value.replace(/\D/g, '');
+    var email = document.getElementById('email').value.trim();
+
+    if (!name)  return fail('Please tell us your name.', ['fullName']);
+    if (phone.length < 10) return fail('Please enter a valid 10-digit mobile number.', ['phone']);
+    if (!/^\S+@\S+\.\S+$/.test(email)) return fail('Please enter a valid email address.', ['email']);
+    if (!document.getElementById('consent').checked) return fail('Please accept the declaration to continue.');
+
+    // Prototype: no backend yet. Real submission wiring is a Phase 2 task.
+    var payload = {
+      name: name, phone: phone, email: email,
+      age: document.getElementById('age').value,
+      program: document.getElementById('program').value,
+      goal: document.getElementById('goal').value,
+      symptoms: picked
+    };
+    console.log('[prototype] enrollment payload', payload);
+
+    document.getElementById('doneName').textContent  = name.split(' ')[0];
+    document.getElementById('doneEmail').textContent = email;
+    document.getElementById('waLink').href =
+      'https://wa.me/917016100775?text=' + encodeURIComponent('Hi, I just enrolled on your website. My name is ' + name + '.');
+
+    document.getElementById('formState').classList.add('hidden');
+    document.getElementById('doneState').classList.remove('hidden');
+    window.scrollTo({ top: 0 });
+  });
+</script>
+</body>
+</html>

@@ -3,45 +3,286 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Divines Health — A/B Prototype</title>
+<title>Divines Wellness Program — Your Trusted Place for Wellness</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  body { font-family: 'Manrope', sans-serif; background:#fdfbf7; }
-  h1,h2,.serif { font-family: 'Cormorant Garamond', serif; }
+  body { font-family: 'Manrope', sans-serif; background:#fafaf7; }
+  .cormorant { font-family: 'Cormorant Garamond', serif; }
+  .frame { max-width: 420px; }
+  html { scroll-behavior: smooth; }
+  .sym.on { background:#c99f6c; border-color:#c99f6c; }
+  .sym.on + p { color:#8d6f4c; font-weight:700; }
+  details > summary { list-style:none; cursor:pointer; }
+  details > summary::-webkit-details-marker { display:none; }
+  details[open] .chev { transform: rotate(180deg); }
 </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-6">
-  <div class="max-w-md w-full text-center">
-    <div class="mx-auto mb-6 w-14 h-14 rounded-full bg-[#8d6f4c] flex items-center justify-center text-2xl">🌿</div>
-    <p class="text-[11px] tracking-[2px] uppercase text-[#a88f6d] font-bold mb-2">The Divines Health</p>
-    <h1 class="serif text-4xl font-semibold text-[#3c2a1e] mb-3">A/B Prototype Preview</h1>
-    <p class="text-[#706661] text-sm leading-relaxed mb-10">
-      Two landing page approaches for the Divines Wellness Program. Pick a version below to view it as a visitor would.
-    </p>
+<body class="text-[#4a3f35]">
+  <div class="frame mx-auto bg-white min-h-screen relative pb-24">
 
-    <div class="grid gap-4">
-      <a href="/a/" class="group block rounded-2xl border border-[#e8dfd3] bg-white p-6 text-left shadow-sm hover:shadow-md hover:border-[#c99443] transition-all">
-        <div class="flex items-center justify-between mb-2">
-          <span class="text-[11px] font-bold uppercase tracking-wider text-[#c99443]">Version A</span>
-          <span class="text-[#c99443] group-hover:translate-x-1 transition-transform">→</span>
-        </div>
-        <p class="serif text-xl font-semibold text-[#2b2421]">Inspiring Journey</p>
-        <p class="text-xs text-[#706661] mt-1">Full program detail leads. Structured, linear walkthrough of the 12-week journey, founders, and testimonials.</p>
-      </a>
+    <!-- ===== NAV ===== -->
+    <header class="flex items-center justify-between px-4 py-3 sticky top-0 bg-white/95 backdrop-blur z-30 border-b border-[#f0ebe1]">
+      <div class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-full bg-[#8d6f4c] flex items-center justify-center text-white text-sm">🌿</div>
+        <p class="font-bold text-[10px] tracking-[1px] text-[#4a3f35]">DIVINES WELLNESS PROGRAM</p>
+      </div>
+      <a href="#enroll-cta" class="text-[11px] font-bold text-white bg-[#8d6f4c] rounded-full px-3.5 py-2">Enroll</a>
+    </header>
 
-      <a href="/b/" class="group block rounded-2xl border border-[#e8dfd3] bg-white p-6 text-left shadow-sm hover:shadow-md hover:border-[#8d6f4c] transition-all">
-        <div class="flex items-center justify-between mb-2">
-          <span class="text-[11px] font-bold uppercase tracking-wider text-[#8d6f4c]">Version B</span>
-          <span class="text-[#8d6f4c] group-hover:translate-x-1 transition-transform">→</span>
+    <!-- ===== 1. HERO VIDEO (Explore → Information → Video) ===== -->
+    <section class="px-4 pt-3">
+      <a href="https://www.instagram.com/reel/DVYMOnRjN74" target="_blank" rel="noopener"
+         class="block bg-[#ede0bd] rounded-2xl h-44 relative flex items-end justify-start overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-14 h-14 rounded-full bg-[#8d6f4c]/90 flex items-center justify-center text-white text-xl">▶</div>
         </div>
-        <p class="serif text-xl font-semibold text-[#2b2421]">Video-Led, Clear Path</p>
-        <p class="text-xs text-[#706661] mt-1">Video hero + tap-to-recognize symptom grid. Shorter, emotional, interactive first — program phases come after.</p>
+        <p class="text-[10px] text-[#8d6f4c] font-semibold px-4 pb-3 relative">Watch: Divines Wellness Program Overview · 3 min</p>
       </a>
+    </section>
+
+    <section class="px-6 pt-6 text-center flex flex-col items-center gap-4">
+      <p class="text-[10px] tracking-[2px] uppercase text-[#a9a190] font-bold">Your Trusted Place for Wellness</p>
+      <p class="cormorant italic font-bold text-[26px] leading-snug">"Heal from within.<br/>Live with balance."</p>
+      <p class="text-[12px] text-[#a9a190] leading-relaxed">A holistic program combining yoga, nutrition &amp; lifestyle medicine — guided by doctors who've lived the journey themselves.</p>
+      <a href="#enroll-cta" class="bg-[#8d6f4c] text-white text-[15px] font-bold rounded-full px-10 py-3.5 inline-block">Enroll Now →</a>
+      <a href="/call/" class="text-[12px] text-[#8d6f4c] font-semibold underline underline-offset-4">Prefer to talk first? Book a free 1:1 call</a>
+    </section>
+
+    <!-- ===== 2. META ROW ===== -->
+    <section class="bg-[#f7f4ee] mt-6 px-4 py-5 flex divide-x divide-[#cdc5af]/40">
+      <div class="flex-1 flex flex-col items-center gap-1.5 text-center">
+        <span>📅</span>
+        <p class="text-[9px] font-bold text-[#a9a190] uppercase tracking-wide">Duration</p>
+        <p class="text-[11px] font-bold">12 Weeks</p>
+      </div>
+      <div class="flex-1 flex flex-col items-center gap-1.5 text-center">
+        <span>🖥️</span>
+        <p class="text-[9px] font-bold text-[#a9a190] uppercase tracking-wide">Mode</p>
+        <p class="text-[11px] font-bold">Online + Live</p>
+      </div>
+      <div class="flex-1 flex flex-col items-center gap-1.5 text-center">
+        <span>🏷️</span>
+        <p class="text-[9px] font-bold text-[#a9a190] uppercase tracking-wide">Investment</p>
+        <p class="text-[11px] font-bold">Ask Us</p>
+      </div>
+      <div class="flex-1 flex flex-col items-center gap-1.5 text-center">
+        <span>📍</span>
+        <p class="text-[9px] font-bold text-[#a9a190] uppercase tracking-wide">Location</p>
+        <p class="text-[11px] font-bold">Surat / Online</p>
+      </div>
+    </section>
+
+    <!-- ===== 3. SYMPTOM GRID — PEAK #1 (recognition) ===== -->
+    <section class="px-4 pt-10 pb-6 text-center relative">
+      <p class="cormorant font-bold text-[28px] leading-tight">Are these symptoms<br/>controlling your life?</p>
+      <p class="text-[10px] font-semibold text-[#8d6f4c] uppercase mt-2 mb-6">tap each one you experience</p>
+
+      <div class="grid grid-cols-3 gap-3" id="symptomGrid">
+        <button class="flex flex-col items-center gap-1.5" data-s="Constant Fatigue"><span class="sym w-16 h-16 rounded-full border-[1.5px] border-[#ede0bd] bg-[#f7f0e2] shadow-sm transition-colors"></span><p class="text-[11px] transition-colors">Constant <span class="font-bold text-[#c99f6c]">Fatigue</span></p></button>
+        <button class="flex flex-col items-center gap-1.5" data-s="Weight Gain"><span class="sym w-16 h-16 rounded-full border-[1.5px] border-[#ede0bd] bg-[#f7f0e2] shadow-sm transition-colors"></span><p class="text-[11px] transition-colors">Weight <span class="font-bold text-[#c99f6c]">Gain</span></p></button>
+        <button class="flex flex-col items-center gap-1.5" data-s="Hair Fall"><span class="sym w-16 h-16 rounded-full border-[1.5px] border-[#ede0bd] bg-[#f7f0e2] shadow-sm transition-colors"></span><p class="text-[11px] transition-colors">Hair <span class="font-bold text-[#c99f6c]">Fall</span></p></button>
+        <button class="flex flex-col items-center gap-1.5" data-s="Mood Swings"><span class="sym w-16 h-16 rounded-full border-[1.5px] border-[#ede0bd] bg-[#f7f0e2] shadow-sm transition-colors"></span><p class="text-[11px] transition-colors">Mood <span class="font-bold text-[#c99f6c]">Swings</span></p></button>
+        <button class="flex flex-col items-center gap-1.5" data-s="Irregular Cycles"><span class="sym w-16 h-16 rounded-full border-[1.5px] border-[#ede0bd] bg-[#f7f0e2] shadow-sm transition-colors"></span><p class="text-[11px] transition-colors">Irregular <span class="font-bold text-[#c99f6c]">Cycles</span></p></button>
+        <button class="flex flex-col items-center gap-1.5" data-s="Brain Fog"><span class="sym w-16 h-16 rounded-full border-[1.5px] border-[#ede0bd] bg-[#f7f0e2] shadow-sm transition-colors"></span><p class="text-[11px] transition-colors">Brain <span class="font-bold text-[#c99f6c]">Fog</span></p></button>
+        <button class="flex flex-col items-center gap-1.5" data-s="Dry Skin"><span class="sym w-16 h-16 rounded-full border-[1.5px] border-[#ede0bd] bg-[#f7f0e2] shadow-sm transition-colors"></span><p class="text-[11px] transition-colors">Dry <span class="font-bold text-[#c99f6c]">Skin</span></p></button>
+        <button class="flex flex-col items-center gap-1.5" data-s="Cold &amp; Constipation"><span class="sym w-16 h-16 rounded-full border-[1.5px] border-[#ede0bd] bg-[#f7f0e2] shadow-sm transition-colors"></span><p class="text-[11px] transition-colors">Cold &amp; <span class="font-bold text-[#c99f6c]">Constipation</span></p></button>
+        <button class="flex flex-col items-center gap-1.5" data-s="Heart Palpitations"><span class="sym w-16 h-16 rounded-full border-[1.5px] border-[#ede0bd] bg-[#f7f0e2] shadow-sm transition-colors"></span><p class="text-[11px] transition-colors">Heart <span class="font-bold text-[#c99f6c]">Palpitations</span></p></button>
+      </div>
+    </section>
+
+    <div class="bg-white rounded-t-3xl -mt-2 px-6 pt-7 pb-2 shadow-[0_-6px_10px_rgba(169,161,144,0.05)]">
+      <p class="cormorant font-bold text-[24px] leading-snug">If your answer is YES, <span class="italic text-[#c99f6c]">you are not alone.</span></p>
+      <p id="symCount" class="text-[12px] text-[#8d6f4c] mt-2 hidden"></p>
+      <div class="h-px bg-[#ede0bd] mt-5"></div>
     </div>
 
-    <p class="text-[11px] text-[#a9a190] mt-10">Best viewed on a mobile-width screen (both designs are mobile-first).</p>
+    <!-- ===== 4. PROGRAM JOURNEY (4D framework) ===== -->
+    <section class="px-6 py-10 flex flex-col items-center gap-6">
+      <div class="flex flex-col items-center gap-3 text-center">
+        <span class="bg-[#f7f4ee] text-[#a9a190] text-[10px] font-bold uppercase px-3 py-1.5 rounded-full">Program Journey</span>
+        <p class="cormorant font-bold text-[28px] leading-tight">3 months — Thyroid Healing Pathways</p>
+        <p class="cormorant italic text-[16px] text-[#a9a190]">A 4-Stage Structured Healing Journey</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 w-full">
+        <div class="rounded-2xl bg-[#fafaf7] shadow-sm overflow-hidden">
+          <div class="h-28 bg-[#e5dcc9] relative flex items-center justify-center text-3xl">🌱<span class="absolute bottom-2 left-2 bg-white/85 text-[10px] font-bold px-2 py-0.5 rounded">PHASE 01</span></div>
+          <div class="p-4"><p class="cormorant font-bold text-lg">Foundation</p><p class="cormorant italic text-[13px] text-[#8d6f4c]">Identify triggers</p><p class="text-[11px] text-[#a9a190] mt-1">Comprehensive assessment &amp; root-cause analysis</p></div>
+        </div>
+        <div class="rounded-2xl bg-[#fafaf7] shadow-sm overflow-hidden">
+          <div class="h-28 bg-[#e5dcc9] relative flex items-center justify-center text-3xl">🔥<span class="absolute bottom-2 left-2 bg-white/85 text-[10px] font-bold px-2 py-0.5 rounded">PHASE 02</span></div>
+          <div class="p-4"><p class="cormorant font-bold text-lg">Vitality</p><p class="cormorant italic text-[13px] text-[#8d6f4c]">Restore gut &amp; energy</p><p class="text-[11px] text-[#a9a190] mt-1">Gut healing &amp; metabolic restoration</p></div>
+        </div>
+        <div class="rounded-2xl bg-[#fafaf7] shadow-sm overflow-hidden">
+          <div class="h-28 bg-[#e5dcc9] relative flex items-center justify-center text-3xl">☯️<span class="absolute bottom-2 left-2 bg-white/85 text-[10px] font-bold px-2 py-0.5 rounded">PHASE 03</span></div>
+          <div class="p-4"><p class="cormorant font-bold text-lg">Balance</p><p class="cormorant italic text-[13px] text-[#8d6f4c]">Regulate stress &amp; hormones</p><p class="text-[11px] text-[#a9a190] mt-1">Mind-body hormonal harmony</p></div>
+        </div>
+        <div class="rounded-2xl bg-[#fafaf7] shadow-sm overflow-hidden">
+          <div class="h-28 bg-[#e5dcc9] relative flex items-center justify-center text-3xl">🕊️<span class="absolute bottom-2 left-2 bg-white/85 text-[10px] font-bold px-2 py-0.5 rounded">PHASE 04</span></div>
+          <div class="p-4"><p class="cormorant font-bold text-lg">Liberation</p><p class="cormorant italic text-[13px] text-[#8d6f4c]">Sustain long-term</p><p class="text-[11px] text-[#a9a190] mt-1">Prevention &amp; self-management mastery</p></div>
+        </div>
+      </div>
+
+      <div class="bg-[#f7f4ee] border border-[#ede0bd] rounded-2xl p-5 w-full">
+        <p class="font-bold text-[16px]">24 Expert Sessions</p>
+        <p class="text-[11px] text-[#a9a190] mt-1">Doctor · Dietician · Yoga Therapist · Mind Coach — 6 sessions each</p>
+      </div>
+    </section>
+
+    <!-- ===== 5. WHAT YOU GAIN ===== -->
+    <section class="bg-[#f7f4ee] px-6 py-9">
+      <p class="cormorant font-bold text-[24px] text-center mb-6">What you will gain</p>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-white rounded-2xl p-4 text-center"><p class="text-2xl">🪷</p><p class="font-bold text-[13px] mt-2">Holistic Approach</p><p class="text-[10px] text-[#a9a190] mt-0.5">Body · Mind · Lifestyle</p></div>
+        <div class="bg-white rounded-2xl p-4 text-center"><p class="text-2xl">🔬</p><p class="font-bold text-[13px] mt-2">Evidence-Based</p><p class="text-[10px] text-[#a9a190] mt-0.5">Rooted in science</p></div>
+        <div class="bg-white rounded-2xl p-4 text-center"><p class="text-2xl">💛</p><p class="font-bold text-[13px] mt-2">Personalized Care</p><p class="text-[10px] text-[#a9a190] mt-0.5">For lasting results</p></div>
+        <div class="bg-white rounded-2xl p-4 text-center"><p class="text-2xl">🌅</p><p class="font-bold text-[13px] mt-2">Sustainable Wellness</p><p class="text-[10px] text-[#a9a190] mt-0.5">For everyday life</p></div>
+      </div>
+    </section>
+
+    <!-- ===== 6. FOUNDERS — PEAK #2 (trust) ===== -->
+    <section id="founders" class="px-6 py-10">
+      <p class="text-[10px] tracking-[2px] uppercase text-[#a9a190] font-bold text-center">Meet Our Founders</p>
+      <p class="cormorant font-bold text-[26px] text-center leading-tight mt-2 mb-7">Guided by doctors who<br/>lived this journey</p>
+
+      <div class="rounded-2xl border border-[#ede0bd] overflow-hidden mb-4">
+        <div class="bg-[#f7f0e2] px-5 py-4 flex items-center gap-3">
+          <div class="w-14 h-14 rounded-full bg-[#e5dcc9] flex items-center justify-center text-2xl shrink-0">👩‍⚕️</div>
+          <div><p class="cormorant font-bold text-[20px] leading-tight">Dr. Neha Solanki</p><p class="text-[10px] font-bold text-[#8d6f4c] uppercase tracking-wide mt-0.5">Founder &amp; Director</p><p class="text-[10px] text-[#a9a190]">Homeopathic Physician &amp; Wellness Expert</p></div>
+        </div>
+        <div class="px-5 py-4">
+          <p class="text-[12px] text-[#a9a190] leading-relaxed">"During my years as a homeopathic doctor, I realized medicines alone are often not the complete solution for chronic lifestyle disorders. In 2007 I began practicing yoga alongside my medical work — and experienced how powerful lifestyle change can be."</p>
+          <p class="cormorant italic text-[15px] text-[#8d6f4c] mt-3">"True healing begins at the root."</p>
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-[#ede0bd] overflow-hidden">
+        <div class="bg-[#f7f0e2] px-5 py-4 flex items-center gap-3">
+          <div class="w-14 h-14 rounded-full bg-[#e5dcc9] flex items-center justify-center text-2xl shrink-0">🧘‍♀️</div>
+          <div><p class="cormorant font-bold text-[20px] leading-tight">Priyanka Patel</p><p class="text-[10px] font-bold text-[#8d6f4c] uppercase tracking-wide mt-0.5">Co-Founder</p><p class="text-[10px] text-[#a9a190]">Integrative Health Practitioner, Yoga Therapist &amp; Life Coach</p></div>
+        </div>
+        <div class="px-5 py-4">
+          <p class="text-[12px] text-[#a9a190] leading-relaxed">"In 2011, during my first year of architecture, I was diagnosed with severe hyperthyroidism. My health declined so quickly I had to pause my studies. During that difficult phase, I found yoga — and slowly regained strength and returned to complete my degree."</p>
+          <p class="cormorant italic text-[15px] text-[#8d6f4c] mt-3">"Healing isn't just my profession — it's my lived experience."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 7. TESTIMONIALS (Inquire cluster) ===== -->
+    <section id="testimonials" class="bg-[#f7f4ee] px-6 py-9">
+      <p class="cormorant font-bold text-[24px] text-center mb-6">Real people, real change</p>
+      <div class="flex flex-col gap-3">
+        <div class="bg-white rounded-2xl p-4">
+          <p class="text-[#c99f6c] text-[13px]">★★★★★</p>
+          <p class="text-[12px] leading-relaxed mt-1.5">"My TSH normalised in 4 months and my energy is back. The yoga sessions were the part I never expected to love."</p>
+          <p class="text-[10px] font-bold text-[#a9a190] mt-2">— Meera K., 42 · Surat</p>
+        </div>
+        <div class="bg-white rounded-2xl p-4">
+          <p class="text-[#c99f6c] text-[13px]">★★★★★</p>
+          <p class="text-[12px] leading-relaxed mt-1.5">"I joined for weight, but the biggest change was my sleep and mood. They actually follow up with you."</p>
+          <p class="text-[10px] font-bold text-[#a9a190] mt-2">— Rajesh P., 35 · Online</p>
+        </div>
+        <div class="bg-white rounded-2xl p-4">
+          <p class="text-[#c99f6c] text-[13px]">★★★★★</p>
+          <p class="text-[12px] leading-relaxed mt-1.5">"Everything was explained simply. I am 58 and I never felt lost during the program."</p>
+          <p class="text-[10px] font-bold text-[#a9a190] mt-2">— Malati B., 58 · Surat</p>
+        </div>
+      </div>
+      <div class="flex justify-around mt-6 pt-5 border-t border-[#ede0bd] text-center">
+        <div><p class="cormorant font-bold text-[24px] text-[#8d6f4c]">500+</p><p class="text-[10px] text-[#a9a190]">Lives changed</p></div>
+        <div><p class="cormorant font-bold text-[24px] text-[#8d6f4c]">15+</p><p class="text-[10px] text-[#a9a190]">Years experience</p></div>
+        <div><p class="cormorant font-bold text-[24px] text-[#8d6f4c]">4.9★</p><p class="text-[10px] text-[#a9a190]">Average rating</p></div>
+      </div>
+    </section>
+
+    <!-- ===== 8. FAQ (Inquire cluster) ===== -->
+    <section id="faq" class="px-6 py-10">
+      <p class="cormorant font-bold text-[24px] text-center mb-6">Your questions, answered</p>
+      <div class="flex flex-col gap-2.5">
+        <details class="bg-[#fafaf7] rounded-xl px-4 py-3.5 border border-[#f0ebe1]">
+          <summary class="flex justify-between items-center gap-3"><span class="font-bold text-[13px]">Do I need to stop my current medicine?</span><span class="chev text-[#8d6f4c] transition-transform">▾</span></summary>
+          <p class="text-[12px] text-[#a9a190] leading-relaxed mt-2.5">No. We work alongside your existing treatment. Any change is made only by your own doctor — we never ask you to stop medication.</p>
+        </details>
+        <details class="bg-[#fafaf7] rounded-xl px-4 py-3.5 border border-[#f0ebe1]">
+          <summary class="flex justify-between items-center gap-3"><span class="font-bold text-[13px]">Is this only for thyroid patients?</span><span class="chev text-[#8d6f4c] transition-transform">▾</span></summary>
+          <p class="text-[12px] text-[#a9a190] leading-relaxed mt-2.5">No. The program suits anyone with a chronic lifestyle concern — or anyone simply wanting to build a healthier routine with guidance.</p>
+        </details>
+        <details class="bg-[#fafaf7] rounded-xl px-4 py-3.5 border border-[#f0ebe1]">
+          <summary class="flex justify-between items-center gap-3"><span class="font-bold text-[13px]">What if I miss a live session?</span><span class="chev text-[#8d6f4c] transition-transform">▾</span></summary>
+          <p class="text-[12px] text-[#a9a190] leading-relaxed mt-2.5">Every session is recorded and shared with you. You can catch up at your own pace, and ask questions in the group.</p>
+        </details>
+        <details class="bg-[#fafaf7] rounded-xl px-4 py-3.5 border border-[#f0ebe1]">
+          <summary class="flex justify-between items-center gap-3"><span class="font-bold text-[13px]">How much does it cost?</span><span class="chev text-[#8d6f4c] transition-transform">▾</span></summary>
+          <p class="text-[12px] text-[#a9a190] leading-relaxed mt-2.5">Fees depend on the program you choose. We share the full breakdown on your free 1:1 call — there is no payment on this page.</p>
+        </details>
+        <details class="bg-[#fafaf7] rounded-xl px-4 py-3.5 border border-[#f0ebe1]">
+          <summary class="flex justify-between items-center gap-3"><span class="font-bold text-[13px]">Can I talk to someone before enrolling?</span><span class="chev text-[#8d6f4c] transition-transform">▾</span></summary>
+          <p class="text-[12px] text-[#a9a190] leading-relaxed mt-2.5">Yes — and we recommend it. <a href="/call/" class="text-[#8d6f4c] font-bold underline">Book a free 1:1 call</a> and speak with the team directly.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== 9. ENROLL / EXIT convergence ===== -->
+    <section id="enroll-cta" class="px-6 pb-10">
+      <div class="rounded-3xl bg-[#f7f0e2] border border-[#ede0bd] p-6 text-center">
+        <p class="cormorant font-bold text-[26px] leading-tight">Ready to begin<br/>your journey?</p>
+        <p class="text-[12px] text-[#a9a190] mt-2.5 leading-relaxed">Tell us about yourself. No payment on this page — we'll reach out personally within 24 hours.</p>
+        <a href="/enroll/" class="block w-full bg-[#8d6f4c] text-white text-center font-bold rounded-full py-4 mt-5">Enroll Now — Start Your Journey</a>
+        <a href="/call/" class="block w-full border-[1.5px] border-[#8d6f4c] text-[#8d6f4c] text-center font-bold rounded-full py-3.5 mt-3 bg-white">Or book a free 1:1 call</a>
+        <p class="text-[10px] text-[#a9a190] mt-4">🔒 Your details stay private. We never share them.</p>
+      </div>
+    </section>
+
+    <!-- ===== 10. CONTACT ===== -->
+    <section class="bg-[#f7f4ee] px-6 py-8">
+      <p class="text-[10px] tracking-[2px] uppercase text-[#a9a190] font-bold text-center mb-5">Ways to connect</p>
+      <div class="grid grid-cols-2 gap-3">
+        <a href="https://wa.me/917016100775" target="_blank" rel="noopener" class="bg-white rounded-2xl p-4 text-center"><p class="text-xl">💬</p><p class="font-bold text-[12px] mt-1.5">WhatsApp</p><p class="text-[10px] text-[#a9a190] mt-0.5">+91 70161 00775</p></a>
+        <a href="tel:+917862083619" class="bg-white rounded-2xl p-4 text-center"><p class="text-xl">📞</p><p class="font-bold text-[12px] mt-1.5">Speak With Us</p><p class="text-[10px] text-[#a9a190] mt-0.5">+91 78620 83619</p></a>
+      </div>
+      <p class="text-[10px] text-[#a9a190] text-center mt-5 leading-relaxed">319-321, Highfield Ascot, VIP Road,<br/>Vesu, Surat, Gujarat, India</p>
+    </section>
+
+    <!-- ===== FOOTER + RESEARCH NOTE ===== -->
+    <footer class="px-6 pt-7 pb-8 text-center">
+      <p class="cormorant italic text-[15px] text-[#8d6f4c]">"You don't just heal — you return to balance."</p>
+      <p class="text-[11px] text-[#a9a190] mt-4">© Divines Wellness Program · Surat, Gujarat, India</p>
+      <p class="text-[10px] text-[#c4bdb0] mt-4 leading-relaxed">
+        Research prototype · This page is Version B, the winner of a 3-participant usability study (Aug 13, 2026).<br/>
+        Tested variants: <a href="/a/" class="underline">Version A</a> · <a href="/b/" class="underline">Version B</a>
+      </p>
+    </footer>
+
   </div>
+
+  <!-- sticky mobile enroll bar -->
+  <div class="fixed bottom-0 inset-x-0 z-40 pointer-events-none">
+    <div class="frame mx-auto px-4 pb-3 pointer-events-auto">
+      <a href="/enroll/" class="block w-full bg-[#8d6f4c] text-white text-center font-bold rounded-full py-3.5 shadow-lg text-[15px]">Enroll Now →</a>
+    </div>
+  </div>
+
+<script>
+  // Symptom recognition — Peak #1. Selections carry into the enrollment form.
+  var picked = [];
+  document.querySelectorAll('#symptomGrid button').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var dot = btn.querySelector('.sym');
+      var name = btn.dataset.s;
+      dot.classList.toggle('on');
+      if (dot.classList.contains('on')) { picked.push(name); }
+      else { picked = picked.filter(function (x) { return x !== name; }); }
+      try { sessionStorage.setItem('tdh_symptoms', JSON.stringify(picked)); } catch (e) {}
+      var out = document.getElementById('symCount');
+      if (picked.length) {
+        out.textContent = 'You selected ' + picked.length + ' — our program addresses ' +
+          (picked.length === 1 ? 'this' : 'all of these') + ' together, not separately.';
+        out.classList.remove('hidden');
+      } else { out.classList.add('hidden'); }
+    });
+  });
+</script>
 </body>
 </html>
